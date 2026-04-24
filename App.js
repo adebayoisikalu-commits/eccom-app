@@ -19,7 +19,7 @@ import { CartProvider } from "./context/CartContext";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-/* ---------------- AUTH CHECK ---------------- */
+ 
 const getUser = async () => {
   const token = await AsyncStorage.getItem("authToken");
   const user = await AsyncStorage.getItem("authUser");
@@ -35,7 +35,7 @@ const getUser = async () => {
   }
 };
 
-/* ---------------- MAIN APP (TABS) ---------------- */
+ 
 function MainTabs() {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
@@ -45,7 +45,7 @@ function MainTabs() {
   );
 }
 
-/* ---------------- ROOT NAVIGATION ---------------- */
+ 
 function RootNavigator() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -63,7 +63,7 @@ function RootNavigator() {
     checkAuth();
   }, []);
 
-  // Listen for auth state changes (login/logout)
+ 
   useEffect(() => {
     const interval = setInterval(async () => {
       const u = await getUser();
@@ -106,7 +106,7 @@ function RootNavigator() {
   );
 }
 
-/* ---------------- APP ROOT ---------------- */
+ 
 export default function App() {
   return (
     <CartProvider>

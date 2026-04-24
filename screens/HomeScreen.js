@@ -26,7 +26,7 @@ export default function HomeScreen({ navigation }) {
   const { addToCart, cart } = useContext(CartContext);
   const adminEmail = "adebayoisikalu@gmail.com";
 
-  // Load user info
+ 
   useEffect(() => {
     const loadUser = async () => {
       const storedUser = await AsyncStorage.getItem("authUser");
@@ -37,7 +37,7 @@ export default function HomeScreen({ navigation }) {
     loadUser();
   }, []);
 
-  // Fetch products
+ 
   useEffect(() => {
     axios
       .get(API_BASE_URL)
@@ -49,7 +49,7 @@ export default function HomeScreen({ navigation }) {
       .finally(() => setLoading(false));
   }, []);
 
-  // Logout handler
+ 
   const handleLogout = async () => {
     Alert.alert("Logout", "Are you sure you want to logout?", [
       { text: "Cancel", style: "cancel" },
@@ -59,7 +59,7 @@ export default function HomeScreen({ navigation }) {
         onPress: async () => {
           await AsyncStorage.removeItem("authToken");
           await AsyncStorage.removeItem("authUser");
-          // Navigation will automatically update due to App.js interval listener
+      
         },
       },
     ]);

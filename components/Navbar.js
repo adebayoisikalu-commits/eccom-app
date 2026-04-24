@@ -11,8 +11,7 @@ export default function Navbar() {
   const [user, setUser] = useState(null);
 
   const adminEmail = "adebayoisikalu@gmail.com";
-
-  // ✅ REFRESH USER EVERY TIME SCREEN IS OPENED
+ 
   useFocusEffect(
     useCallback(() => {
       const loadUser = async () => {
@@ -31,7 +30,7 @@ export default function Navbar() {
 
     setUser(null);
 
-    // IMPORTANT: go to login correctly
+    
     navigation.reset({
       index: 0,
       routes: [{ name: "Login" }],

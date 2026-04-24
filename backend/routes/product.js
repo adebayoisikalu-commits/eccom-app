@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Product = require("../models/Product");
 
-// GET all products
 router.get("/", async (req, res) => {
   try {
     const products = await Product.find();
@@ -22,7 +21,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-// UPDATE product
 router.put("/:id", async (req, res) => {
   try {
     const updated = await Product.findByIdAndUpdate(

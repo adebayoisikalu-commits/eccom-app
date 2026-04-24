@@ -6,7 +6,7 @@ export const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
-  // Load cart on app start
+ 
   useEffect(() => {
     const loadCart = async () => {
       try {
@@ -22,7 +22,7 @@ export function CartProvider({ children }) {
     loadCart();
   }, []);
 
-  // Save cart whenever it changes
+ 
   useEffect(() => {
     const saveCart = async () => {
       try {
@@ -35,7 +35,7 @@ export function CartProvider({ children }) {
     saveCart();
   }, [cart]);
 
-  // ➕ Add to cart
+ 
   const addToCart = (product) => {
     setCart((prev) => {
       const existing = prev.find((p) => p._id === product._id);
@@ -57,7 +57,7 @@ export function CartProvider({ children }) {
     setCart((prev) => prev.filter((p) => p._id !== id));
   };
 
-  // ⬆️ Increase quantity
+  
   const increaseQty = (id) => {
     setCart((prev) =>
       prev.map((p) =>
@@ -66,7 +66,7 @@ export function CartProvider({ children }) {
     );
   };
 
-  // ⬇️ Decrease quantity
+   
   const decreaseQty = (id) => {
     setCart((prev) =>
       prev
@@ -79,7 +79,7 @@ export function CartProvider({ children }) {
     );
   };
 
-  // 💰 Total price
+  // Total price
   const total = cart.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
