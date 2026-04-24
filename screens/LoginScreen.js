@@ -1,13 +1,5 @@
 import { useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  Pressable,
-  StyleSheet,
-  Alert,
-  ActivityIndicator,
-} from "react-native";
+import {View, Text, TextInput, Pressable, StyleSheet, Alert, ActivityIndicator,} from "react-native";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -57,11 +49,11 @@ export default function LoginScreen({ navigation }) {
 
       const { user, token } = response.data;
 
-      // Store auth data
+       // store auth data 
       await AsyncStorage.setItem("authToken", token);
       await AsyncStorage.setItem("authUser", JSON.stringify(user));
 
-      // Trigger re-render in App.js by clearing the state
+      
       Alert.alert("Success", "Logged in successfully!");
     } catch (err) {
       Alert.alert(
@@ -94,7 +86,7 @@ export default function LoginScreen({ navigation }) {
         <Text style={styles.errorText}>{errors.email}</Text>
       )}
 
-      {/* PASSWORD */}
+      {/*password */}
       <TextInput
         placeholder="Password"
         style={[styles.input, errors.password && styles.errorInput]}
@@ -107,7 +99,7 @@ export default function LoginScreen({ navigation }) {
         <Text style={styles.errorText}>{errors.password}</Text>
       )}
 
-      {/* BUTTON */}
+      {/*button*/}
       <Pressable
         style={[styles.button, loading && styles.buttonDisabled]}
         onPress={handleLogin}
@@ -118,7 +110,7 @@ export default function LoginScreen({ navigation }) {
         </Text>
       </Pressable>
 
-      {/* SIGNUP LINK */}
+      {/*signup link */}
       <Pressable onPress={() => navigation.navigate("Signup")} disabled={loading}>
         <Text style={styles.link}>
           Don't have an account? Sign Up

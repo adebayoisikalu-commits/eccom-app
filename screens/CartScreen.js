@@ -1,12 +1,5 @@
 import { useContext } from "react";
-import {
-  View,
-  Text,
-  FlatList,
-  Pressable,
-  StyleSheet,
-  Alert,
-} from "react-native";
+import {View,Text,FlatList,Pressable,StyleSheet,Alert,} from "react-native";
 import { CartContext } from "../context/CartContext";
 
 export default function CartScreen() {

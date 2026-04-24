@@ -4,7 +4,7 @@ export default function ProductCard({ product, addToCart }) {
   return (
     <Pressable style={styles.card}>
 
-      {/* IMAGE */}
+      {/*image */}
       <View style={styles.media}>
         <Image
           source={{ uri: product.image }}
@@ -12,7 +12,7 @@ export default function ProductCard({ product, addToCart }) {
         />
       </View>
 
-      {/* CONTENT */}
+      {/* content */}
       <View style={styles.content}>
 
         <Text style={styles.eyebrow}>Luxury Picks</Text>
@@ -26,7 +26,7 @@ export default function ProductCard({ product, addToCart }) {
             "Elevated essentials designed to bring a refined finish to your everyday wardrobe."}
         </Text>
 
-        {/* FOOTER */}
+         
         <View style={styles.footer}>
 
           <View>

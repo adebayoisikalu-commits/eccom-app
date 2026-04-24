@@ -1,12 +1,5 @@
 import { useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  Pressable,
-  StyleSheet,
-  Alert,
-} from "react-native";
+import {View,Text,TextInput,Pressable,StyleSheet,Alert,} from "react-native";
 import axios from "axios";
 
 const API_BASE_URL = "https://e-commerce-g5xv.onrender.com/api";
@@ -82,7 +75,7 @@ export default function SignupScreen({ navigation }) {
         Join and start your shopping journey
       </Text>
 
-      {/* NAME */}
+      {/*name*/}
       <TextInput
         placeholder="Name"
         style={[styles.input, errors.name && styles.errorInput]}
@@ -94,7 +87,7 @@ export default function SignupScreen({ navigation }) {
         <Text style={styles.errorText}>{errors.name}</Text>
       )}
 
-      {/* EMAIL */}
+      {/*email*/}
       <TextInput
         placeholder="Email"
         style={[styles.input, errors.email && styles.errorInput]}
@@ -107,7 +100,7 @@ export default function SignupScreen({ navigation }) {
         <Text style={styles.errorText}>{errors.email}</Text>
       )}
 
-      {/* PASSWORD */}
+      {/*password*/}
       <TextInput
         placeholder="Password"
         style={[styles.input, errors.password && styles.errorInput]}
@@ -120,7 +113,7 @@ export default function SignupScreen({ navigation }) {
         <Text style={styles.errorText}>{errors.password}</Text>
       )}
 
-      {/* BUTTON */}
+      {/* button*/}
       <Pressable
         style={[styles.button, loading && styles.buttonDisabled]}
         onPress={handleSignup}
@@ -131,7 +124,7 @@ export default function SignupScreen({ navigation }) {
         </Text>
       </Pressable>
 
-      {/* LOGIN LINK */}
+     {/* login link*/}
       <Pressable onPress={() => navigation.navigate("Login")} disabled={loading}>
         <Text style={styles.link}>
           Already have an account? Login

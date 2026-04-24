@@ -1,15 +1,5 @@
  import { useEffect, useState, useContext, useRef } from "react";
-import {
-  View,
-  Text,
-  FlatList,
-  StyleSheet,
-  Pressable,
-  Image,
-  ScrollView,
-  ActivityIndicator,
-  Alert,
-} from "react-native";
+import {View,Text,FlatList,StyleSheet,Pressable,Image,ScrollView,ActivityIndicator,Alert,} from "react-native";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { CartContext } from "../context/CartContext";
@@ -70,7 +60,6 @@ export default function HomeScreen({ navigation }) {
   };
 
   const handleShopCollection = () => {
-    // Scroll to products section (approximately 600px down)
     scrollViewRef.current?.scrollTo({
       y: 600,
       animated: true,
@@ -152,7 +141,7 @@ export default function HomeScreen({ navigation }) {
       {/* LOADING */}
       {loading && <ActivityIndicator size="large" color="#ff4f87" />}
 
-      {/* PRODUCTS */}
+      {/*product */}
       <FlatList
         data={featuredProducts}
         scrollEnabled={false}
