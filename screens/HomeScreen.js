@@ -117,7 +117,7 @@ export default function HomeScreen({ navigation }) {
           Discover elevated essentials, modern fashion, and timeless pieces
         </Text>
 
-        {/* HERO IMAGE */}
+         {/* HERO IMAGE */}
         <Image
           source={{
             uri: "https://www.instyle.com/thmb/nswLuCLoYaOgGKS1mf3SxULvl7E=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-2214264711-8c1da132de854bea92ad54a52935689d.jpg",
